@@ -13,6 +13,7 @@ import com.massivecraft.factions.Faction;
 import com.massivecraft.factions.struct.Permission;
 import com.massivecraft.factions.struct.Relation;
 import com.massivecraft.factions.struct.Role;
+import com.massivecraft.factions.util.MiscUtil;
 
 public class CmdHome extends FCommand
 {
@@ -122,7 +123,9 @@ public class CmdHome extends FCommand
 		// if economy is enabled, they're not on the bypass list, and this command has a cost set, make 'em pay
 		if ( ! payForCommand(Conf.econCostHome, "to change faction home", "for changing faction home")) return;
 
-		me.teleport(myFaction.getHome());
+		MiscUtil.teleport(me, myFaction.getHome());
 	}
+	
+	
 	
 }
